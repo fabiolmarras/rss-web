@@ -1,0 +1,20 @@
+---
+---
+  declared-services:
+   conversation-service:
+     label: conversation
+     plan: free
+   nlu-service:
+     label: natural-language-understanding  
+     plan: free
+   applications:
+-  name: <APP_NAME>
+   memory: 256M
+   routes:
+   - route: <APP_NAME>.mybluemix.net
+   buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+   services:
+   - my-conversation-service
+   - my-nlu-service
+   env:
+     NPM_CONFIG_PRODUCTION: false

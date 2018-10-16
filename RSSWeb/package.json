@@ -1,0 +1,48 @@
+{
+  "name": "conversation-simple",
+  "description": "A nodeJS app to assist users to find the Firewalls involved from source and target IP information.",
+  "version": "0.1.1",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test-integration": "casperjs test ./test/integration/test.*.js",
+    "test-integration-runner": "NODE_ENV=test node casper-runner.js",
+    "test": "npm run lint && npm run test-unit && npm run test-integration-runner",
+    "test-unit": "istanbul cover ./node_modules/mocha/bin/_mocha test/unit",
+    "lint": "eslint .",
+    "autofix": "eslint --fix .",
+    "codecov": "npm run test && (codecov || true)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watson-developer-cloud/conversation-simple.git"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "botkit-middleware-watson": "^1.7.1",
+    "cloudant": "^1.10.0",
+    "crawler": "^1.1.2",
+    "dotenv": "^2.0.0",
+    "express": "^4.16.3",
+    "promise": "^8.0.1",
+    "request": "^2.85.0",
+    "vcap_services": "^0.3.4",
+    "watson-developer-cloud": "^3.4.2",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.4",
+    "casperjs": "^1.1.3",
+    "codecov": "^1.0.1",
+    "eslint": "^2.8.0",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.16",
+    "supertest": "^1.2.0"
+  },
+  "engines": {
+    "node": ">= 6.9.x",
+    "npm": "> 3.10.x"
+  }
+}
